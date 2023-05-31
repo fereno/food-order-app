@@ -8,8 +8,7 @@ const MealItemForm = (props) => {
     event.preventDefault();
     console.log("on submit price", price);
   };
-  const onChangeHandler = (event) => {
-    console.log("event", price);
+  const onAddPriceHandler = (event) => {
     setPrice(event.target.value);
   };
 
@@ -25,6 +24,7 @@ const MealItemForm = (props) => {
           step: "1",
           defaultValue: "1",
         }}
+        onChange={onAddPriceHandler}
       />
       <button type="submit">+ Add</button>
     </form>
