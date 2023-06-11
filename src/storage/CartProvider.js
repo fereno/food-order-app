@@ -10,10 +10,15 @@ const cartReducer = (state, action) => {
   }
   if (action.type === "REMOVE") {
     const updatedItems = state.items.filter((item) => item.id !== action.id);
-    const updatedTotalAmount = updatedItems.map((item) => {
+
+    // const updatedTotalAmount = updatedItems.map((item) => {
+    //   sum += item.price * item.amount;
+    // });
+    let sum = 0;
+    for (let item of updatedItems) {
       sum += item.price * item.amount;
-    });
-    return {items: updatedItems, totalAmount: updatedTotalAmount};
+    }
+    return {items: updatedItems, totalAmount: sum};
   }
   return defaultCartState;
 };
