@@ -43,16 +43,6 @@ const cartReducer = (state, action) => {
       updatedItems[existingCartItemIndex] = updatedItem;
     }
     return {items: updatedItems, totalAmount: updatedTotalAmount};
-    // const updatedItems = state.items.filter((item) => item.id !== action.id);
-
-    // // const updatedTotalAmount = updatedItems.map((item) => {
-    // //   sum += item.price * item.amount;
-    // // });
-    // let sum = 0;
-    // for (let item of updatedItems) {
-    //   sum += item.price * item.amount;
-    // }
-    // return {items: updatedItems, totalAmount: sum};
   }
   return defaultCartState;
 };
